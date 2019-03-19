@@ -17,6 +17,10 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+    repositories {
+        mavenCentral()
+    }
+    
     task initSourceFolders {
         sourceSets*.java.srcDirs*.each {
             if(!it.exists()) {
@@ -42,4 +46,7 @@ project(':profile-api') {
 }
 
 project(':coupon-api') {
+}
+
+project(':api-gateway') {
 }

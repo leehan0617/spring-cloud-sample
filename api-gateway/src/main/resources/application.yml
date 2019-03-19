@@ -1,0 +1,10 @@
+server:
+  port: ${PORT:8080}
+zuul:
+  routes:
+    coupon:
+      path: /coupon/**
+      url: http://localhost:8083
+    profile:
+      path: /profile/**
+      url: http://localhost:8084
