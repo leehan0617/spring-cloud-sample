@@ -1,2 +1,11 @@
 server:
   port: ${PORT:8083}
+
+spring:
+  application:
+    name: coupon-api
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
