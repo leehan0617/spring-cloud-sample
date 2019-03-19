@@ -24,5 +24,6 @@ dependencies {
         springBootVersion = '2.0.5.RELEASE'
     }
     compile('org.springframework.cloud:spring-cloud-starter-netflix-zuul')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }

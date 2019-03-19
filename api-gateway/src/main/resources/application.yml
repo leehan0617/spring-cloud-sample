@@ -1,10 +1,14 @@
 server:
   port: ${PORT:8080}
 zuul:
+  prefix: /api/v1
   routes:
-    coupon:
-      path: /coupon/**
-      url: http://localhost:8083
-    profile:
+    profile-api:
       path: /profile/**
-      url: http://localhost:8084
+    coupon-api:
+      path: /coupon/**
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
