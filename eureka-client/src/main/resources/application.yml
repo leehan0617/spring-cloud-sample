@@ -1,9 +1,9 @@
+server:
+  port: ${PORT:8081}
+
 spring:
   application:
     name: eureka-client
-
-server:
-  port: ${PORT:8081}
 
 eureka:
   client:
