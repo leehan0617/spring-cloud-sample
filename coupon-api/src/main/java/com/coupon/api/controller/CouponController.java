@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CouponController {
 
-    @GetMapping("/{id}")
-    public String getCoupon(@PathVariable int id) {
-        return "coupon:" + id;
+    @GetMapping("/feign/{id}")
+    public String getCouponForFeign(@PathVariable int id) {
+        return "feign & coupon" + id;
     }
 }
