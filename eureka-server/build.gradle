@@ -1,19 +1,5 @@
-buildscript {
-    ext {
-        springBootVersion = '2.0.5.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
-
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
 bootJar {
     baseName = 'eureka-server'
@@ -35,6 +21,9 @@ dependencyManagement {
 }
 
 dependencies {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
