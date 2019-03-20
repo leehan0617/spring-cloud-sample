@@ -28,5 +28,6 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
     compile('org.springframework.cloud:spring-cloud-starter-openfeign')
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }

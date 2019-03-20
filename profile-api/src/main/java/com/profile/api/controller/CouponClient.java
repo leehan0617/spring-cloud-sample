@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface CouponClient {
 
     // feign client에서는 PathVariable의 필드값을 반드시 명시해야 한다.
-    @GetMapping("/feign/{id}")
+    @GetMapping("/coupon/feign/{id}")
     String getCouponForFeign(@PathVariable("id") int id);
 }

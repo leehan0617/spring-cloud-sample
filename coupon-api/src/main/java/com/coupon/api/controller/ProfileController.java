@@ -6,25 +6,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coupon.api.service.CouponService;
+import com.coupon.api.service.ProfileService;
 
 /**
- * Created by heron.lee 2019-03-19
+ * Created by heron.lee 2019-03-20
  */
 @RestController
-@RequestMapping("/coupon")
-public class CouponController {
+@RequestMapping("/profile")
+public class ProfileController {
 
     @Autowired
-    private CouponService couponService;
-
-    @GetMapping("/feign/{id}")
-    public String getCouponForFeign(@PathVariable int id) {
-        return "feign & coupon" + id;
-    }
+    private ProfileService profileService;
 
     @GetMapping("/{id}")
-    public String getCoupon(@PathVariable int id) {
-        return couponService.getCoupon(id);
+    public String getProfile(@PathVariable int id) {
+        return profileService.getProfile(id);
     }
 }
