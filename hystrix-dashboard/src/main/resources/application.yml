@@ -4,3 +4,15 @@ server:
 spring:
   application:
     name: service-dashboard
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
+
+turbine:
+  # 아래걸 붙이게되면 localhost:10001/turbine.stream?cluster=COUPON-API 와 같이 따로따로 호출가능
+#  aggregator:
+#    cluster-config: COUPON-API, PROFILE-API
+  app-config: coupon-api, profile-api
+  cluster-name-expression: new String("default")
