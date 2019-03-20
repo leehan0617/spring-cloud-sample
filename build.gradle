@@ -50,3 +50,6 @@ project(':coupon-api') {
 
 project(':api-gateway') {
 }
+
+project(':hystrix-dashboard') {
+}
