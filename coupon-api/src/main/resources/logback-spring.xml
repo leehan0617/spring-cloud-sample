@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+  </appender>
+
+  <appender name="kafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
+    <encoder class="com.github.danielwegener.logback.kafka.encoding.LayoutKafkaMessageEncoder">
+      <layout class="net.logstash.logback.layout.LogstashLayout"/>
+    </encoder>
+    <topic>coupon-api</topic>
+    <producerConfig>bootstrap.servers=localhost:9092</producerConfig>
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="kafkaAppender"/>
+  </root>
+</configuration>

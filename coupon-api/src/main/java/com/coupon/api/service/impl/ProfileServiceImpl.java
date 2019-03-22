@@ -1,5 +1,7 @@
 package com.coupon.api.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +15,14 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Service
 public class ProfileServiceImpl implements ProfileService {
 
+    Logger logger = LoggerFactory.getLogger(ProfileServiceImpl.class);
     @Autowired
     private ProfileClient profileClient;
 
     @Override
     @HystrixCommand(fallbackMethod = "fallbackProfile")
     public String getProfile(int id) {
+        logger.info("get profile called" + id);
         return profileClient.getProfile(id);
     }
 
